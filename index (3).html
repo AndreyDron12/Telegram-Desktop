@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="ЗАНОС — школа дрифта для новичков и продолжающих">
 <meta property="og:description" content="Учим дрифту с нуля на машинах школы. Малые группы, опытные тренеры, первый занос на первом занятии.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0d'/%3E%3Cpath d='M6 24 L14 8 H20 L12 24Z' fill='%23ff4d1a'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b0b0d'/%3E%3Cpath d='M6 24 L14 8 H20 L12 24Z' fill='%23ff2e88'/%3E%3C/svg%3E">
 <script>document.documentElement.classList.add('js');</script>
 <style>
 /* ===== Тема: всё меняется здесь ===== */
@@ -20,8 +20,8 @@
   --color-border: #2c2c33;
   --color-text: #f2f2f4;
   --color-muted: #b4b4bd;
-  --color-accent: #ff4d1a;
-  --color-accent-hover: #ff6a3d;
+  --color-accent: #ff2e88;
+  --color-accent-hover: #ff5da2;
   --color-on-accent: #0b0b0d;
   --color-error: #ff8a80;
   --color-success: #5ce08a;
@@ -40,7 +40,7 @@
   --radius-lg: 22px;
 
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 10px 34px rgba(255, 77, 26, 0.35);
+  --shadow-glow: 0 10px 34px rgba(255, 46, 136, 0.35);
 
   --header-h: 64px;
   --cut: clamp(1.5rem, 4vw, 3.5rem);
@@ -120,8 +120,8 @@ a { color: inherit; }
 
 /* ===== Первый экран ===== */
 .hero { padding-top: calc(var(--header-h) + var(--space-lg)); padding-bottom: calc(var(--space-xl) + var(--cut)); position: relative; overflow: hidden; background:
-  radial-gradient(60% 60% at 85% 15%, rgba(255, 77, 26, 0.28), transparent 70%),
-  radial-gradient(50% 50% at 0% 100%, rgba(255, 77, 26, 0.12), transparent 70%),
+  radial-gradient(60% 60% at 85% 15%, rgba(255, 46, 136, 0.28), transparent 70%),
+  radial-gradient(50% 50% at 0% 100%, rgba(255, 46, 136, 0.12), transparent 70%),
   var(--color-bg);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), 0 100%); }
 .hero__skid { position: absolute; right: -10%; bottom: 12%; width: min(90%, 760px); opacity: 0.55; pointer-events: none; }
@@ -137,8 +137,13 @@ a { color: inherit; }
 .grid { display: grid; gap: var(--space-md); grid-template-columns: 1fr; }
 .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); box-shadow: var(--shadow-card); transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
 .card:hover { transform: translateY(-5px); border-color: var(--color-accent); box-shadow: var(--shadow-card), var(--shadow-glow); }
-.card__icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: var(--space-sm); background: linear-gradient(135deg, var(--color-accent), #c2290a); color: var(--color-on-accent); border-radius: var(--radius-sm); }
+.card__icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: var(--space-sm); background: linear-gradient(135deg, var(--color-accent), #c40f63); color: var(--color-on-accent); border-radius: var(--radius-sm); }
 .card p:last-child { margin-bottom: 0; color: var(--color-muted); }
+
+/* ===== Как проходит занятие ===== */
+.step { position: relative; overflow: hidden; counter-increment: step; }
+.step__num { position: absolute; top: -0.2em; right: 0.5rem; font-family: var(--font-display); font-size: 7rem; line-height: 1; color: var(--color-accent); opacity: 0.14; pointer-events: none; }
+.step__time { display: inline-block; margin-top: var(--space-xs); padding: 0.25rem 0.8rem; border: 1px solid var(--color-border); border-radius: 999px; color: var(--color-accent); font-weight: 700; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* ===== Программа ===== */
 .level { position: relative; overflow: hidden; }
@@ -149,7 +154,7 @@ a { color: inherit; }
 
 /* ===== Тарифы ===== */
 .price { display: flex; flex-direction: column; position: relative; }
-.price--popular { border-color: var(--color-accent); background: linear-gradient(180deg, #25140f, var(--color-surface) 55%); }
+.price--popular { border-color: var(--color-accent); background: linear-gradient(180deg, #2b0e1c, var(--color-surface) 55%); }
 .price__badge { position: absolute; top: -14px; left: var(--space-md); background: var(--color-accent); color: var(--color-on-accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 999px; }
 .price__value { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.2rem); line-height: 1; margin: 0.5rem 0 var(--space-sm); }
 .price__value small { font-family: var(--font-body); font-size: 0.95rem; color: var(--color-muted); }
@@ -180,7 +185,7 @@ a { color: inherit; }
 .field label { font-weight: 600; font-size: 0.95rem; }
 .field input, .field select { width: 100%; min-height: 48px; padding: 0.6rem 0.9rem; font: 400 1rem var(--font-body); font-size: max(16px, 1rem); color: var(--color-text); background: var(--color-bg); border: 2px solid var(--color-border); border-radius: var(--radius-sm); transition: border-color 0.2s, box-shadow 0.2s; }
 .field input:hover, .field select:hover { border-color: #43434d; }
-.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(255, 77, 26, 0.35); }
+.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(255, 46, 136, 0.35); }
 .field input:user-invalid, .field select:user-invalid { border-color: var(--color-error); }
 .field__error { color: var(--color-error); font-size: 0.875rem; min-height: 1.2em; }
 .check { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem; color: var(--color-muted); }
@@ -243,6 +248,7 @@ a { color: inherit; }
     <a href="#top" class="logo" aria-label="ЗАНОС — на главную">За<span>нос</span></a>
     <nav class="nav" id="nav" aria-label="Основное меню">
       <a class="nav__link" href="#about">О занятиях</a>
+      <a class="nav__link" href="#how">Как проходят</a>
       <a class="nav__link" href="#program">Программа</a>
       <a class="nav__link" href="#pricing">Тарифы</a>
       <a class="nav__link" href="#coaches">Тренеры</a>
@@ -264,8 +270,8 @@ a { color: inherit; }
   <!-- Первый экран -->
   <section class="hero" aria-labelledby="hero-title">
     <svg class="hero__skid" viewBox="0 0 600 300" fill="none" aria-hidden="true">
-      <path d="M20 270 C 180 270, 260 250, 330 170 S 470 40, 580 30" stroke="#ff4d1a" stroke-width="22" stroke-linecap="round" opacity="0.55"/>
-      <path d="M60 285 C 220 285, 300 262, 372 182 S 500 62, 590 56" stroke="#ff4d1a" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+      <path d="M20 270 C 180 270, 260 250, 330 170 S 470 40, 580 30" stroke="#ff2e88" stroke-width="22" stroke-linecap="round" opacity="0.55"/>
+      <path d="M60 285 C 220 285, 300 262, 372 182 S 500 62, 590 56" stroke="#ff2e88" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
     </svg>
     <div class="container hero__inner">
       <h1 id="hero-title" class="reveal">Поставь машину <span class="accent">боком</span></h1>
@@ -312,6 +318,44 @@ a { color: inherit; }
           <p>Первый контролируемый занос уже в первый день. Дальше — связки и дуги.</p>
         </article>
       </div>
+    </div>
+  </section>
+
+  <!-- Как проходит занятие -->
+  <section class="section" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__kicker">Как это устроено</p>
+        <h2 id="how-title">Как проходит занятие</h2>
+        <p class="section__lead">Каждая тренировка идёт по понятной схеме: от разбора техники на земле до самостоятельных заездов и разбора видео.</p>
+      </div>
+      <div class="grid grid--4">
+        <article class="card step reveal">
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3>Инструктаж</h3>
+          <p>Рассказываем про площадку, машину и правила безопасности. Разбираем, как работает занос и почему машина едет боком.</p>
+          <span class="step__time">~15 минут</span>
+        </article>
+        <article class="card step reveal">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3>Знакомство с машиной</h3>
+          <p>Посадка, руль, педали. Прогреваем шины, пробуем разгон и торможение по прямой — без заноса, чтобы почувствовать машину.</p>
+          <span class="step__time">~20 минут</span>
+        </article>
+        <article class="card step reveal">
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3>Первые заносы</h3>
+          <p>Вводим машину в занос газом и ручником. Тренер сидит рядом и подсказывает голосом в реальном времени.</p>
+          <span class="step__time">~40 минут</span>
+        </article>
+        <article class="card step reveal">
+          <span class="step__num" aria-hidden="true">4</span>
+          <h3>Практика и разбор</h3>
+          <p>Самостоятельные заезды на круге, отдых и вода. В конце — разбор видео заездов и план на следующее занятие.</p>
+          <span class="step__time">~45 минут</span>
+        </article>
+      </div>
+      <p class="reveal" style="max-width: 640px; margin-top: var(--space-lg); color: var(--color-muted);">Между заездами вы отдыхаете и смотрите, как едут другие участники группы: до 4 человек на тренера, поэтому все успевают покататься достаточно. В перерывах — вода, чай и обсуждение техники с тренером.</p>
     </div>
   </section>
 
