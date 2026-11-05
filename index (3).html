@@ -140,6 +140,13 @@ a { color: inherit; }
 .card__icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: var(--space-sm); background: linear-gradient(135deg, var(--color-accent), #c2290a); color: var(--color-on-accent); border-radius: var(--radius-sm); }
 .card p:last-child { margin-bottom: 0; color: var(--color-muted); }
 
+/* ===== Галерея ===== */
+.gallery { display: grid; gap: var(--space-md); grid-template-columns: 1fr; }
+.gallery figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-card); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; transition: transform 0.4s ease; }
+.gallery figure:hover img { transform: scale(1.05); }
+.gallery figcaption { position: absolute; inset: auto 0 0 0; padding: 1.6rem 1rem 0.9rem; font-weight: 600; font-size: 0.95rem; color: var(--color-text); background: linear-gradient(180deg, transparent, rgba(11, 11, 13, 0.85)); }
+
 /* ===== Программа ===== */
 .level { position: relative; overflow: hidden; }
 .level__num { position: absolute; top: -0.2em; right: 0.5rem; font-family: var(--font-display); font-size: 7rem; line-height: 1; color: var(--color-accent); opacity: 0.14; pointer-events: none; }
@@ -211,6 +218,7 @@ a { color: inherit; }
   .grid--2 { grid-template-columns: repeat(2, 1fr); }
   .footer__grid { grid-template-columns: repeat(3, 1fr); }
   .level__meta { grid-template-columns: repeat(2, 1fr); }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 768px) {
   .grid--3 { grid-template-columns: repeat(3, 1fr); }
@@ -225,6 +233,7 @@ a { color: inherit; }
   .form-wrap { grid-template-columns: 1fr 1fr; align-items: center; }
   .price--popular { transform: translateY(-14px); }
   .price--popular:hover { transform: translateY(-19px); }
+  .gallery { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* ===== Уменьшенная анимация ===== */
@@ -246,6 +255,7 @@ a { color: inherit; }
       <a class="nav__link" href="#program">Программа</a>
       <a class="nav__link" href="#pricing">Тарифы</a>
       <a class="nav__link" href="#coaches">Тренеры</a>
+      <a class="nav__link" href="#gallery">Галерея</a>
       <a class="nav__link" href="#faq">Вопросы</a>
       <a class="nav__link" href="#signup">Запись</a>
     </nav>
@@ -427,6 +437,28 @@ a { color: inherit; }
           <p class="coach__role">Тренер</p>
           <p>Опыт: 5 лет, судья соревнований. Специализация: стиль, линия и продвинутый уровень.</p>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея -->
+  <section class="section" id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="section__kicker">Галерея</p>
+        <h2 id="gallery-title">Как это выглядит</h2>
+        <p class="section__lead">Несколько кадров проездов наших тренеров.</p>
+      </div>
+      <div class="gallery">
+        <figure class="reveal">
+          <img src="images4.jpg" alt="Занятие в школе дрифта: машина в заносе на площадке" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal">
+          <img src="images5.jpg" alt="Тренер разбирает технику дрифта с учеником" loading="lazy" decoding="async">
+        </figure>
+        <figure class="reveal">
+          <img src="images6.jpg" alt="Подготовленная машина школы дрифта" loading="lazy" decoding="async">
+        </figure>
       </div>
     </div>
   </section>
