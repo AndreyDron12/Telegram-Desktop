@@ -20,8 +20,8 @@
   --color-border: #2c2c33;
   --color-text: #f2f2f4;
   --color-muted: #b4b4bd;
-  --color-accent: #ff4d1a;
-  --color-accent-hover: #ff6a3d;
+  --color-accent: #ff4da6;
+  --color-accent-hover: #ff6ac1;
   --color-on-accent: #0b0b0d;
   --color-error: #ff8a80;
   --color-success: #5ce08a;
@@ -40,7 +40,7 @@
   --radius-lg: 22px;
 
   --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
-  --shadow-glow: 0 10px 34px rgba(255, 77, 26, 0.35);
+  --shadow-glow: 0 10px 34px rgba(255, 77, 166, 0.35);
 
   --header-h: 64px;
   --cut: clamp(1.5rem, 4vw, 3.5rem);
@@ -120,8 +120,8 @@ a { color: inherit; }
 
 /* ===== Первый экран ===== */
 .hero { padding-top: calc(var(--header-h) + var(--space-lg)); padding-bottom: calc(var(--space-xl) + var(--cut)); position: relative; overflow: hidden; background:
-  radial-gradient(60% 60% at 85% 15%, rgba(255, 77, 26, 0.28), transparent 70%),
-  radial-gradient(50% 50% at 0% 100%, rgba(255, 77, 26, 0.12), transparent 70%),
+  radial-gradient(60% 60% at 85% 15%, rgba(255, 77, 166, 0.28), transparent 70%),
+  radial-gradient(50% 50% at 0% 100%, rgba(255, 77, 166, 0.12), transparent 70%),
   var(--color-bg);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), 0 100%); }
 .hero__skid { position: absolute; right: -10%; bottom: 12%; width: min(90%, 760px); opacity: 0.55; pointer-events: none; }
@@ -137,7 +137,7 @@ a { color: inherit; }
 .grid { display: grid; gap: var(--space-md); grid-template-columns: 1fr; }
 .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-md); box-shadow: var(--shadow-card); transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s; }
 .card:hover { transform: translateY(-5px); border-color: var(--color-accent); box-shadow: var(--shadow-card), var(--shadow-glow); }
-.card__icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: var(--space-sm); background: linear-gradient(135deg, var(--color-accent), #c2290a); color: var(--color-on-accent); border-radius: var(--radius-sm); }
+.card__icon { width: 52px; height: 52px; display: grid; place-items: center; margin-bottom: var(--space-sm); background: linear-gradient(135deg, var(--color-accent), #c20a7e); color: var(--color-on-accent); border-radius: var(--radius-sm); }
 .card p:last-child { margin-bottom: 0; color: var(--color-muted); }
 
 /* ===== Галерея ===== */
@@ -156,7 +156,7 @@ a { color: inherit; }
 
 /* ===== Тарифы ===== */
 .price { display: flex; flex-direction: column; position: relative; }
-.price--popular { border-color: var(--color-accent); background: linear-gradient(180deg, #25140f, var(--color-surface) 55%); }
+.price--popular { border-color: var(--color-accent); background: linear-gradient(180deg, #250f1d, var(--color-surface) 55%); }
 .price__badge { position: absolute; top: -14px; left: var(--space-md); background: var(--color-accent); color: var(--color-on-accent); font-weight: 800; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.8rem; border-radius: 999px; }
 .price__value { font-family: var(--font-display); font-size: clamp(2.4rem, 5vw, 3.2rem); line-height: 1; margin: 0.5rem 0 var(--space-sm); }
 .price__value small { font-family: var(--font-body); font-size: 0.95rem; color: var(--color-muted); }
@@ -187,7 +187,7 @@ a { color: inherit; }
 .field label { font-weight: 600; font-size: 0.95rem; }
 .field input, .field select { width: 100%; min-height: 48px; padding: 0.6rem 0.9rem; font: 400 1rem var(--font-body); font-size: max(16px, 1rem); color: var(--color-text); background: var(--color-bg); border: 2px solid var(--color-border); border-radius: var(--radius-sm); transition: border-color 0.2s, box-shadow 0.2s; }
 .field input:hover, .field select:hover { border-color: #43434d; }
-.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(255, 77, 26, 0.35); }
+.field input:focus-visible, .field select:focus-visible { outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 3px rgba(255, 77, 166, 0.35); }
 .field input:user-invalid, .field select:user-invalid { border-color: var(--color-error); }
 .field__error { color: var(--color-error); font-size: 0.875rem; min-height: 1.2em; }
 .check { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.95rem; color: var(--color-muted); }
@@ -274,8 +274,8 @@ a { color: inherit; }
   <!-- Первый экран -->
   <section class="hero" aria-labelledby="hero-title">
     <svg class="hero__skid" viewBox="0 0 600 300" fill="none" aria-hidden="true">
-      <path d="M20 270 C 180 270, 260 250, 330 170 S 470 40, 580 30" stroke="#ff4d1a" stroke-width="22" stroke-linecap="round" opacity="0.55"/>
-      <path d="M60 285 C 220 285, 300 262, 372 182 S 500 62, 590 56" stroke="#ff4d1a" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
+      <path d="M20 270 C 180 270, 260 250, 330 170 S 470 40, 580 30" stroke="#ff4da6" stroke-width="22" stroke-linecap="round" opacity="0.55"/>
+      <path d="M60 285 C 220 285, 300 262, 372 182 S 500 62, 590 56" stroke="#ff4da6" stroke-width="10" stroke-linecap="round" opacity="0.35"/>
     </svg>
     <div class="container hero__inner">
       <h1 id="hero-title" class="reveal">Поставь машину <span class="accent">боком</span></h1>
